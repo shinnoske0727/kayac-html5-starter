@@ -16,7 +16,7 @@ npm install
   - このファイルです。
 - `package.json`
   - 依存するnpmパッケージに関する設定ファイルです。
-- `gulpfile.babel.js`
+- `gulpfile.js`
   - gulpタスクに関する設定ファイルです。（`.babel.js`となっているのは、es2015で書くための印です）
 - `public`
   - Web公開されるファイルの置き場所です。 (gulpタスク実行までは空の状態です)

@@ -1,5 +1,5 @@
 export default class Sample {
-    constructor (opts = {}) {
+    constructor(opts = {}) {
         this.name = opts.name;
     }
-};
+}
