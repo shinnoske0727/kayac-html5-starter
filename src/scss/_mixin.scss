@@ -9,3 +9,50 @@
         @content;
     }
 }
+
+@mixin side-by-side($pos) {
+    display: flex;
+    @if $pos == 'left' {
+        justify-content: flex-start;
+    } @else if $post == 'right' {
+        justify-content: flex-end;
+    } @else if $post == 'center' {
+        justify-content: center;
+    } @else {
+        justify-content: space-between;
+    }
+}
+
+@mixin tandem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin trianglearrow($direction: right, $size: 12, $color: $gray){
+    $set: left;
+
+    @if $direction == left{
+        $set: right;
+    } @else if $direction == top{
+        $set: bottom;
+    } @else if $direction == bottom{
+        $set: top;
+    } @else {
+        $set: left;
+    }
+    $size: round($size / 2);
+
+    width: 0;
+    height: 0;
+    border: $size + px solid transparent;
+    border-#{$set}-color: $color;
+}
+
+@mixin text-invisible {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: transparent;
+}
