@@ -39,7 +39,8 @@ gulp.task('sass', () => {
             relative: `./${DEST}/css`
         }),
         require('autoprefixer')({
-            browsers: ['ie >= 11', 'ios >= 9', 'android >= 4.4.4']
+            browsers: ['ie >= 11', 'ios >= 9', 'android >= 4.4.4'],
+            grid: true
         })
     ]
     return gulp
@@ -77,7 +78,7 @@ gulp.task('pug', () => {
                 basedir: `${SRC}/pug`
             })
         )
-        .pipe(gulp.dest(`${DEST}/js`))
+        .pipe(gulp.dest(`${DEST}`))
 })
 
 gulp.task('html', gulp.series('pug'))
